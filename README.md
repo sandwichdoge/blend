@@ -1,2 +1,4 @@
 # blend
-blend 2 images into multiple instances of different alpha weight
+Blend 2 images into multiple instances of different alpha weight.
+
+Example use of sod library
