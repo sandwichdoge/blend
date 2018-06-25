@@ -10,8 +10,10 @@ Example use of sod library.
 gcc ../lib/sod/sod.c blend.c -lm -Ofast -march=native -Wall -std=c99 -o blend
 
 # usage
-blend <input1> <input2> <n_output_files> <output_mask>
-
+```
+blend <input_image1> <input_image2> <n_output_files> <output_mask>
+```
 or
-
+```
 blend -h|--help
+```
