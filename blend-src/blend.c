@@ -3,15 +3,15 @@
 #include <string.h>
 #include "../lib/sod/sod.h"
 
-//create 4 blended instances of 2 images
+//create multiple blended instances of 2 images
 //compile:
 //gcc ../lib/sod/sod.c blend.c -lm -Ofast -march=native -Wall -std=c99 -o blend
 //more info: https://sod.pixlab.io/api.html
 
 char *file_get_extension(char *str)
 {
-  char *ext = strrchr(str, '.');
-  return ext;
+	char *ext = strrchr(str, '.');
+	return ext;
 }
 
 char *filename_without_ext(char *str)
@@ -32,7 +32,7 @@ int blend_images(char *fpath1, char *fpath2, char *output_mask, int output_count
 	char *output_ext = file_get_extension(output_mask);
 	char *output_without_ext = filename_without_ext(output_mask);
 	sod_img img_in = sod_img_load_from_file(fpath1, 3); /*0=full color channels */
-  sod_img img_in2 = sod_img_load_from_file(fpath2, 3); /*3 channels for compatibility*/
+  	sod_img img_in2 = sod_img_load_from_file(fpath2, 3); /*3 channels for compatibility*/
 	if (img_in.data == 0 || img_in2.data == 0) {
 		/*invalid path, unsupported format, memory failure, etc.*/
 		printf("cannot load input images..exiting\n");
@@ -62,7 +62,7 @@ int blend_images(char *fpath1, char *fpath2, char *output_mask, int output_count
 
 	/*clean up*/
 	sod_free_image(img_in);
-  sod_free_image(img_in2);
+  	sod_free_image(img_in2);
 	free(output_without_ext);
 	return 0;
 }
@@ -78,7 +78,7 @@ void show_help(char *prog_name)
 int main(int argc, char *argv[])
 {
 	char *input1 = argv[1];
-  char *input2 = argv[2];
+  	char *input2 = argv[2];
 	char *output_count_r = argv[3];
 	char *output = argc > 4 ? argv[4] : "out.png";  // no arg4 -> default output to out.png
 
