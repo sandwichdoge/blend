@@ -7,7 +7,10 @@ Example use of sod library.
 ![alt text](https://raw.githubusercontent.com/sandwichdoge/blend/master/Images/BlendEx.png)
 
 # compile
+OS-agnostic
+```
 gcc ../lib/sod/sod.c blend.c -lm -Ofast -march=native -Wall -std=c99 -o blend
+```
 
 # usage
 ```
